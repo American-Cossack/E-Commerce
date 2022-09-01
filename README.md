@@ -14,5 +14,10 @@
 ## Post MVP
 #### Post MVP technilogies will involve a proper hashing of all passwords entered, and a more elaborate and user friendly UI experience.
 
+## Documents
+#### [Trello](https://trello.com/b/SqBBwzMD/e-commerce)
+#### [Component Hierarchy/ERD](https://app.diagrams.net/#G12hcN5qcZYvDuS9x2pCE8Wv__OCad-FMH)
+#### [LinkedIn](https://www.linkedin.com/in/richardjremley/)
+
 
 
