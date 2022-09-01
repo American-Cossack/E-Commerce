@@ -9,3 +9,8 @@
 #### PostgresQL
 #### Node
 
+## Post MVP
+#### Post MVP technilogies will involve a proper hashing of all passwords entered, and a more elaborate and user friendly UI experience.
+
+
+
