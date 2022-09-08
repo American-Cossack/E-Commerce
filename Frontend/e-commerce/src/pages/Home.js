@@ -1,6 +1,7 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  let navigate = useNavigate();
   return (
     <div>
       <h1>The Gundam Emporium</h1>
@@ -9,17 +10,17 @@ const Home = () => {
         lowest and the fastest shipping for all your hobby needs!
       </h2>
       <section>
-        <button onClick={() => Navigate("/signin")}>
+        <button onClick={() => navigate("/signin")}>
           Click here to get shopping.
         </button>
       </section>
       <section>
-        <button onClick={() => Navigate("/register")}>
+        <button onClick={() => navigate("/register")}>
           New here? Click here to register for the first time!
         </button>
       </section>
     </div>
   );
 };
-Home();
+
 export default Home;

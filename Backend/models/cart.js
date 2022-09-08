@@ -9,22 +9,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Cart.belongsToMany(models.Item, {
-        as: "items",
-        through: models.selected_item,
-        foreignKey: "cart_id",
-      });
+      Cart.belongsTo(models.User, { foreignKey: "id" });
+      Cart.hasMany(models.Item, { foreignKey: "id" });
+      Cart.hasOne(models.Checkout, { foreignKey: "Checkout_id" });
     }
   }
   Cart.init(
     {
       Cart_id: DataTypes.INTEGER,
-      item_id: DataTypes.INTEGER,
-      Total_price: DataTypes.NUMBER,
+      Item_id: DataTypes.INTEGER,
+      Total_all_price: DataTypes.NUMBER,
     },
     {
       sequelize,
       modelName: "Cart",
+      tableName: "cart",
     }
   );
   return Cart;
