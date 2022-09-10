@@ -11,19 +11,19 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Cart.belongsTo(models.User, { foreignKey: "id" });
       Cart.hasMany(models.Item, { foreignKey: "id" });
-      Cart.hasOne(models.Checkout, { foreignKey: "Checkout_id" });
+      Cart.hasOne(models.Checkout, { foreignKey: "checkout_id" });
     }
   }
   Cart.init(
     {
-      Cart_id: DataTypes.INTEGER,
-      Item_id: DataTypes.INTEGER,
-      Total_all_price: DataTypes.NUMBER,
+      cart_id: DataTypes.INTEGER,
+      item_id: DataTypes.INTEGER,
+      Total_all_price: DataTypes.INTEGER,
     },
     {
       sequelize,
       modelName: "Cart",
-      tableName: "cart",
+      tableName: "carts",
     }
   );
   return Cart;

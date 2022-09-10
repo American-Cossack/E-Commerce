@@ -8,13 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      Checkout_id: {
+      checkout_id: {
         type: Sequelize.INTEGER,
       },
-      Address: {
+      address_id: {
         type: Sequelize.STRING,
       },
-      Payment_info: {
+      payment_id: {
         type: Sequelize.STRING,
       },
       createdAt: {

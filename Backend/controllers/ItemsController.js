@@ -2,9 +2,12 @@ const { Cart, Checkout, Item, User } = require("../models");
 
 const GetItems = async (req, res) => {
   try {
-    item = await Item.findAll({});
+    let item2 = await Item.findAll({});
+    return res.send(item2);
   } catch (error) {
     throw error;
   }
 };
-GetItems();
+module.exports = {
+  GetItems,
+};

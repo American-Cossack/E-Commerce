@@ -10,21 +10,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Checkout.belongsTo(models.Cart, { foreignKey: "Cart_id" });
+      Checkout.belongsTo(models.Cart, { foreignKey: "cart_id" });
       Checkout.belongsTo(models.User, { foreignKey: "Address" });
       Checkout.belongsTo(models.User, { foreignKey: "Payment_info" });
     }
   }
   Checkout.init(
     {
-      Checkout_id: DataTypes.INTEGER,
-      Address: DataTypes.STRING,
-      Payment_info: DataTypes.STRING,
+      checkout_id: DataTypes.INTEGER,
+      address_id: DataTypes.STRING,
+      payment_id: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: "Checkout",
-      tableName: "checkout",
+      tableName: "checkouts",
     }
   );
   return Checkout;

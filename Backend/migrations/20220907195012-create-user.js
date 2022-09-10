@@ -8,9 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      User_id: {
-        type: Sequelize.INTEGER,
-      },
+
       Email: {
         type: Sequelize.STRING,
       },
@@ -21,10 +19,10 @@ module.exports = {
         type: Sequelize.STRING,
       },
       Telephone: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       Payment_info: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: true,

@@ -1,0 +1,8 @@
+const router = require("express").Router();
+const controller = require("../controllers/CheckoutController");
+// const middleware = require("../middleware");
+
+// router.get(":/items", controller.GetItems);
+router.get("/", controller.GetCheckout);
+router.post("/", controller.PostCheckout);
+module.exports = router;

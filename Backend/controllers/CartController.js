@@ -8,4 +8,16 @@ const GetCart = async (req, res) => {
     throw error;
   }
 };
-GetCart();
+const PostCart = async (req, res) => {
+  try {
+    cart = await Cart.create({ ...req.body });
+    res.send(cart);
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = {
+  GetCart,
+  PostCart,
+};

@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-
+import "../App.css";
 const Home = () => {
   let navigate = useNavigate();
   return (
-    <div>
+    <div className="title">
       <h1>The Gundam Emporium</h1>
       <h2>
         Shipping to you directly from DFW, the Gundam Emporium provides the

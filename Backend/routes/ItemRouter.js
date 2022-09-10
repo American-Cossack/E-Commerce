@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const controller = require("../controllers/ItemsController");
-const middleware = require("../middleware");
+// const middleware = require("../middleware");
 
-router.get(":/item", controller.GetItems);
-
+// router.get(":/items", controller.GetItems);
+router.get("/", controller.GetItems);
 module.exports = router;

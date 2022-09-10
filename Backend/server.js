@@ -1,0 +1,15 @@
+const express = require("express");
+// const routes = require("./routes");
+// const bodyParser = require("body-parser");
+const app = express();
+const cors = require("cors");
+const PORT = process.env.PORT || 3001;
+const indexRouter = require("./routes/index");
+// const UserRouter = require("./routes/UserRouter");
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// app.use("/api", UserRouter);
+// app.use(bodyParser.json());
+app.use("/api", indexRouter);
+app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
