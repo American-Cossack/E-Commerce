@@ -7,28 +7,21 @@ import Nav from "./components/nav";
 import Home from "./pages/Home";
 import { BASE_URL } from "./global";
 import axios from "axios";
+import Items from "./components/items";
 // import Home2 from "./components/home2";
-function App() {
-  const getItems = async () => {
-    try {
-      let res = await axios.get(`${BASE_URL}/api/items`);
-      console.log(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  getItems();
 
+function App() {
   return (
     <div>
       <header>
         <Nav />
       </header>
       <main>
-        {/* <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes> */}
+        <Routes>
+          <Route path="/items" element={<Items />} />
+        </Routes>
         <Home />
+        {/* <Items /> */}
       </main>
     </div>
   );

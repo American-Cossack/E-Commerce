@@ -6,19 +6,35 @@ module.exports = (sequelize, DataTypes) => {
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
+     
      */
     static associate(models) {
       // define association here
-      Cart.belongsTo(models.User, { foreignKey: "id" });
-      Cart.hasMany(models.Item, { foreignKey: "id" });
-      Cart.hasOne(models.Checkout, { foreignKey: "checkout_id" });
+      Cart.belongsTo(models.User, { foreignKey: "user_id" });
+      Cart.belongsTo(models.Item, { foreignKey: "item_id" });
     }
   }
   Cart.init(
     {
-      cart_id: DataTypes.INTEGER,
+      // cart_id: DataTypes.INTEGER,
       item_id: DataTypes.INTEGER,
       Total_all_price: DataTypes.INTEGER,
+      user_id: {
+        type: DataTypes.INTEGER,
+        onDelete: "CASCADE",
+        references: {
+          model: "users",
+          key: "id",
+        },
+      },
+      item_id: {
+        type: DataTypes.INTEGER,
+        onDelete: "CASCADE",
+        references: {
+          model: "items",
+          key: "id",
+        },
+      },
     },
     {
       sequelize,

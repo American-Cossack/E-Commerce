@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Item.belongsTo(models.Cart, { foreignKey: "id" });
+      Item.hasOne(models.Cart, { as: "items", foreignKey: "item_id" });
     }
   }
   Item.init(
@@ -19,6 +19,14 @@ module.exports = (sequelize, DataTypes) => {
       Price: DataTypes.INTEGER,
       Quantity: DataTypes.INTEGER,
       Total_Price: DataTypes.INTEGER,
+      // cart_id: {
+      //   type: DataTypes.INTEGER,
+      //   onDelete: "CASCADE",
+      //   references: {
+      //     model: "carts",
+      //     key: "id",
+      //   },
+      // },
     },
     {
       sequelize,
