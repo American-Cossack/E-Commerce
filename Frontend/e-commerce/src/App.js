@@ -7,21 +7,40 @@ import Nav from "./components/nav";
 import Home from "./pages/Home";
 import { BASE_URL } from "./global";
 import axios from "axios";
-import Items from "./components/items";
+import Items from "./components/Items";
+import Cart from "./components/cart";
 // import Home2 from "./components/home2";
-
+import Greeting from "./components/Greeting";
+import LoginButton from "./components/LoginButton";
+import LogoutButton from "./components/LogoutButton";
+import SignIn from "./pages/SignIn";
 function App() {
+  const [isLoggedIn, toggleLogin] = useState(false);
+
+  const handleLoginClick = () => toggleLogin(true);
+
+  const handleLogoutClick = () => toggleLogin(false);
+
+  let button;
+
+  if (isLoggedIn) {
+    button = <LogoutButton onClick={handleLogoutClick} />;
+  } else {
+    button = <LoginButton onClick={handleLoginClick} />;
+  }
   return (
     <div>
       <header>
         <Nav />
       </header>
       <main>
+        {/* <Home /> */}
         <Routes>
+          <Route path="/home" element={<Home />} />
+          {/* <Route path="/signin" element={<SignIn />} /> */}
           <Route path="/items" element={<Items />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
-        <Home />
-        {/* <Items /> */}
       </main>
     </div>
   );
