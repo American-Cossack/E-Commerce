@@ -1,14 +1,29 @@
 import { useNavigate } from "react-router-dom";
 import "../App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Greeting from "../components/Greeting";
 import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
+import axios from "axios";
+import { BASE_URL } from "../global";
 const Home = () => {
   let navigate = useNavigate();
   const [isLoggedIn, toggleLogin] = useState(false);
+  const [Users, import2Users] = useState([]);
+  const TrueHandleLoginClick = () => {
+    toggleLogin(true);
+    const postUsers = async (req, res) => {
+      try {
+        let res = await axios.post(`${BASE_URL}/api/users`);
+        import2Users(res.data);
+        console.log(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-  const handleLoginClick = () => toggleLogin(true);
+    postUsers();
+  };
 
   const handleLogoutClick = () => toggleLogin(false);
 
@@ -17,7 +32,7 @@ const Home = () => {
   if (isLoggedIn) {
     button = <LogoutButton onClick={handleLogoutClick} />;
   } else {
-    button = <LoginButton onClick={handleLoginClick} />;
+    button = <LoginButton onClick={TrueHandleLoginClick} />;
   }
   return (
     <div className="title">
