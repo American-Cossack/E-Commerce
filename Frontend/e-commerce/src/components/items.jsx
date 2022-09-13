@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import "../Items.css"
 const Items = (props) => {
 const [items, get2Items] = useState([]);
+const [formState, setFormState] = useState([])
 const [parseItems, parse2Items ]= useState([])
 const [carts, set2Carts] = useState([])
 const getItems = async (req, res) => {
@@ -19,11 +20,13 @@ const getItems = async (req, res) => {
   }; useEffect(()=> {
     getItems(); 
 }, [])
-const postCarts = async (req, res) => {
+const handleSubmit = async (e) => {
+// console.log(items)
+  (items.map((item)=> (item= formState)))
   try {
-    let res = await axios.post(`${BASE_URL}/api/carts`);
-    console.log(res.data);
-    set2Carts(res.data);
+    let res = await axios.put(`${BASE_URL}/api/carts`, formState);
+    console.log(formState);
+    setFormState(res.data);
   } catch (err) {
     console.log(err);
   }
@@ -35,7 +38,7 @@ console.log(items)
 return <h2> loading</h2>}
     else {
       return ((items.map((item)=> (
-        <p className="items-grid">{item.Name} Description:{item.Description} <img src ={item.Image} className="img"></img>${item.Price} <button>Add to Cart</button>
+        <p className="items-grid">{item.Name} Description:{item.Description} <img src ={item.Image} className="img"></img>${item.Price} <button onClick={handleSubmit}>Add to Cart</button>
         </p> 
       )))
       )

@@ -5,4 +5,5 @@ const controller = require("../controllers/UserController");
 // router.get(":/items", controller.GetItems);
 router.get("/", controller.GetUser);
 router.post("/", controller.PostUser);
+router.delete("/", controller.DeleteAllUsers);
 module.exports = router;

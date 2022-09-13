@@ -5,4 +5,5 @@ const controller = require("../controllers/CartController");
 // router.get(":/items", controller.GetItems);
 router.get("/", controller.GetCart);
 router.post("/", controller.PostCart);
+router.put("/", controller.UpdateCart);
 module.exports = router;

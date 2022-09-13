@@ -18,7 +18,17 @@ const PostUser = async (req, res) => {
     throw error;
   }
 };
+
+const DeleteAllUsers = async (req, res) => {
+  try {
+    user = await User.destroy({ where: { Email: null } });
+    // res.send(user);
+  } catch (error) {
+    throw error;
+  }
+};
 module.exports = {
   PostUser,
   GetUser,
+  DeleteAllUsers,
 };

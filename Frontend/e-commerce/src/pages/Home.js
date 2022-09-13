@@ -10,6 +10,7 @@ const Home = () => {
   let navigate = useNavigate();
   const [isLoggedIn, toggleLogin] = useState(false);
   const [Users, import2Users] = useState([]);
+  const [Carts, import2Carts] = useState([]);
   const TrueHandleLoginClick = () => {
     toggleLogin(true);
     const postUsers = async (req, res) => {
@@ -21,8 +22,26 @@ const Home = () => {
         console.log(err);
       }
     };
-
+    const deleteUsers = async (req, res) => {
+      try {
+        let res = await axios.delete(`${BASE_URL}/api/users`);
+        console.log(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    const postCarts = async (req, res) => {
+      try {
+        let res = await axios.post(`${BASE_URL}/api/carts`);
+        import2Carts(res.data);
+        console.log(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    deleteUsers();
     postUsers();
+    postCarts();
   };
 
   const handleLogoutClick = () => toggleLogin(false);
