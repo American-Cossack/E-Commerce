@@ -13,7 +13,9 @@ import Cart from "./components/cart";
 import Greeting from "./components/Greeting";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
-import SignIn from "./pages/SignIn";
+
+import Checkouts from "./components/checkouts";
+import Landing from "./pages/LandPage";
 function App() {
   const [isLoggedIn, toggleLogin] = useState(false);
 
@@ -40,6 +42,8 @@ function App() {
           {/* <Route path="/signin" element={<SignIn />} /> */}
           <Route path="/items" element={<Items />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkouts />} />
+          <Route path="/landing" element={<Landing />} />
         </Routes>
       </main>
     </div>

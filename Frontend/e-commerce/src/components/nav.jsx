@@ -7,8 +7,9 @@ const Nav = () => {
         <h4>Navigation</h4>
         <div>
           <Link to="/home"> Home </Link>
-          <Link to="/items">Listings</Link>
-          <Link to="/cart">Cart</Link>
+          <Link to="/items"> Listings</Link>
+          <Link to="/cart"> Cart</Link>
+          <Link to="/checkout"> Checkout</Link>
         </div>
       </nav>
     )

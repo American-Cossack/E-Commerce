@@ -36,8 +36,11 @@ console.log(items1)
   if (!items1 ){
 return <h2> loading</h2>}
     else {
-      return  <p className="items-grid"> {items1.Name} Description:{items1.Description} <img src ={items1.Image} className="img"></img>${items1.Price} 
-        </p> 
+      return  (
+      <div>
+        <h1>Your Cart</h1>
+      <p className="items-grid"> {items1.Name} Description:{items1.Description} <img src ={items1.Image} className="img"></img>Total Price: ${items1.Price} 
+        </p> </div>)
   
 
   
