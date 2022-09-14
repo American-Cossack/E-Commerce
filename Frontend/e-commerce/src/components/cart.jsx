@@ -36,11 +36,10 @@ console.log(items1)
   if (!items1 ){
 return <h2> loading</h2>}
     else {
-      return ((items1.map((item)=> (
-        <p className="items-grid"> {item.Name} Description:{item.Description} <img src ={item.Image} className="img"></img>${item.Price} 
+      return  <p className="items-grid"> {items1.Name} Description:{items1.Description} <img src ={items1.Image} className="img"></img>${items1.Price} 
         </p> 
-      )))
-      )
+  
+
   
 }}
   export default Cart
