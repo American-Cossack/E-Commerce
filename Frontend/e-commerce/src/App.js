@@ -7,7 +7,7 @@ import Nav from "./components/nav";
 import Home from "./pages/Home";
 import { BASE_URL } from "./global";
 import axios from "axios";
-import Items from "./components/Items";
+import Items from "./components/items";
 import Cart from "./components/cart";
 // import Home2 from "./components/home2";
 import Greeting from "./components/Greeting";

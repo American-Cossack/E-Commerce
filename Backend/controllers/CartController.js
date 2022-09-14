@@ -18,11 +18,17 @@ const PostCart = async (req, res) => {
 };
 
 const UpdateCart = async (req, res) => {
-  const cart_id = await Cart.findOne({ where: { item_id: null } });
-  const true_cart_id = await cart_id.item_id;
+  let ItemID = parseInt(req.body.id);
+  let CartID = parseInt(req.body.cart_id);
+  // const cart_id = await Cart.findOne({ where: { item_id: null } });
+  // const true_cart_id = await cart_id.item_id;
 
   try {
-    cart = await Cart.update({ true_cart_id }, { where: { item_id: null } });
+    cart = await Cart.update(
+      { item_id: ItemID },
+      { where: { id: 1 }, returning: true }
+    );
+
     res.send(cart);
   } catch (error) {
     throw error;
